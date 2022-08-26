@@ -2,7 +2,7 @@
 title: Reykjavik [CTFlearn] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2022-08-25 18:32:00 -0500
-categories: [CTFlearn, Challenges, "Reverse Engineering"]
+categories: ["CTF Platform", "CTFlearn Challenges", "Reverse Engineering"]
 tags: [CTFlearn, Easy, Reykjavik, "Reverse Engineering", Challenge, writeup, gdb, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
 ---

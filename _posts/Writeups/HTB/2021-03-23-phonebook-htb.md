@@ -21,7 +21,7 @@ Who is lucky enough to be included in the phonebook?
 
 Click on the `Start Instance` button to start the challenge.
 
-The you are provided with an `website's address` copy it and open it in another tab or browser.
+The you are provided with an `website's address` copy it and open it in another tab or browser.<br>
 In my case it was `http://206.189.121.131:30184`
 
 ### Homepage of the Webapp :
@@ -29,8 +29,8 @@ In my case it was `http://206.189.121.131:30184`
 ![homepage](/assets/htb/challenge/web/phonebook/img/homepage.png)
 
 
-The Webapp ask us to Login to the application.
-But we don't have any credentials, but we have a text in the homepage where it says 
+The Webapp ask us to Login to the application.<br>
+But we don't have any credentials, but we have a text in the homepage where it says<br>
 `New (9.8.2020): You can now login using the workstation username and password! - Reese`
 
 So `Reese` may or may not be the username.
@@ -42,17 +42,17 @@ I tried to use `SQL injection` at first but it didn't work for me.
 
 ### XSS :
 
-After modifying the url,  I tried to use XSS attack.
-First with `alert(1)`, so the modified url becomes 
-`http://206.189.121.131:30184/login?message=<script>alert(1);</script>`
+After modifying the url,  I tried to use XSS attack.<br>
+First with `alert(1)`, so the modified url becomes <br>
+`http://206.189.121.131:30184/login?message=<script>alert(1);</script>`<br>
 but it doesn't work.
 
 Then, after viewing the source code of the webpage, I thought of using `DOM XSS`
 
 ![homepage_source_code](/assets/htb/challenge/web/phonebook/img/homepage_source_code.png)
 
-Then the **xss payload** would be `<img src='x' onerror='alert(1)'>`
-and the url would be:
+Then the **xss payload** would be `<img src='x' onerror='alert(1)'>`<br>
+and the url would be:<br>
 `http://206.189.121.131:30184/login?message=<img src='x' onerror='alert(1)'>`
 
 Yeah it worked, it's a `DOM XSS` :)
@@ -60,25 +60,25 @@ Yeah it worked, it's a `DOM XSS` :)
 ![DOM_XSS](/assets/htb/challenge/web/phonebook/img/DOM_XSS.png)
 
 
-But this is not, how I solved the challenge.
+But this is not, how I solved the challenge.<br>
 I didn't find anything after that as I am not an expert in Web challenges as for now.
 
 
 ## Solution :
 
-So I thought of using special characters in the **Login** and **Password** Fields.
+So I thought of using special characters in the **Login** and **Password** Fields.<br>
 After, using 2-3 special character, I got a blank page while using `\` in **Login** and **Password** fields.
 
 ![during_500_error](/assets/htb/challenge/web/phonebook/img/during_500_error.png)
 
 While using python for testing it's details, I got that it is giving a `500` status code.
 
-As I am a bit lazy, I started to build a `Bruteforce` script for testing all the special characters.
+As I am a bit lazy, I started to build a `Bruteforce` script for testing all the special characters.<br>
 At first I created the script to list all the `status code, username, and password` during the testing of status code.
 
 ![special_chr_testing](/assets/htb/challenge/web/phonebook/img/special_chr_testing.png)
 
-I found out that there are lots of credentials that provides `500` status code.
+I found out that there are lots of credentials that provides `500` status code.<br>
 So, I modified the script to output only  `200` status code.
 
 ![special_chr_status_200](/assets/htb/challenge/web/phonebook/img/special_chr_status_200.png)
@@ -130,7 +130,7 @@ After searching about this exploit, I found a website, and it has a similar beha
 
 <a href='https://www.netsparker.com/blog/web-security/ldap-injection-how-to-prevent' target='_blank'>How to prevent LDAP injection</a>
 
-And I thought, may be it is a `LDAP Injection`
+And I thought, may be it is a `LDAP Injection`<br>
 And, it was absolutely new to me :)
 
 After reading, it for quite a bit. I thought of writing another `Bruteforce script` for finding `username` and `password`
@@ -246,7 +246,6 @@ def cred_finder(cred_to_find):
 
 					break
 				
-
 				else:
 					track+=1
 
@@ -273,21 +272,22 @@ cred_finder('passwd') # Find the Passwd
 
 ```
 
-No `proxy` has been used in this script.
+No `proxy` has been used in this script.<br>
 You can also run it with `proxy` if you want to.
 
-It may be possible that the webapp will not respond, because of `bruteforce attack`, which can lead to `DDOS Attack`
+It may be possible that the webapp will not respond, because of `bruteforce attack`, which can lead to `DDOS Attack`<br>
 in that case the script will wait for 5 seconds before sending next request to the webapp.
-
 
 This script is capable of finding `username` as well as `password`
 
 ![brute_user](/assets/htb/challenge/web/phonebook/img/brute_user.png)
 
-But in this case we have to find the `password` only to solve the challenge.
+But in this case we have to find the `password` only to solve the challenge.<br>
 The `password` is the `flag` for this challenge
 
 ![brute_pass](/assets/htb/challenge/web/phonebook/img/brute_pass.png)
+
+---
 
 This is how, I solved this challenge.
 

@@ -121,11 +121,13 @@ End of assembler dump.
 
 4. Passing the Length Check
 
-In `main` function we can see that in address `0x00005555555550a9` `0x20` is subtracted from `rsp`
-so we can assume that the length of the Flag will be **0x20** or **32**
+In `main` function we can see that in address `0x00005555555550a9` `0x20` is subtracted from `rsp`<br>
+so we can assume that the length of the Flag will be **0x20** or **32**<br>
 Thus the ultimate FLAG Length will be **32**
 
+```bash
 => 0x00005555555550a9 <+9>:	sub    rsp,0x20
+```
 
 5. Starting the program again with 32 length buffer again
 
@@ -137,8 +139,8 @@ pwndbg> start AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 6. False Flag :P
 
-Debugging the binary stump us into address `0x5555555550ee`
-where `RDX` and `RDI` is assigned `CTFlearn{Is_This_A_False_Flag?}`
+Debugging the binary stump us into address `0x5555555550ee`<br>
+where `RDX` and `RDI` is assigned `CTFlearn{Is_This_A_False_Flag?}`<br>
 which is a False Flag or Rabbit Hole :P
 
 ```bash
@@ -147,8 +149,8 @@ which is a False Flag or Rabbit Hole :P
 
 7. Revealing the FLAG
 
-Debugging the binary stump us into address `0x555555555168`
-where `R13` is assigned with `CTFlearn{Eye_L0ve_Iceland_}`
+Debugging the binary stump us into address `0x555555555168`<br>
+where `R13` is assigned with `CTFlearn{Eye_L0ve_Iceland_}`<br>
 which is the flag for the challenge
 
 ```bash

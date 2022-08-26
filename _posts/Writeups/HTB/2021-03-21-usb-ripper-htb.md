@@ -14,17 +14,19 @@ permalink: "/HTB/challenge/forensics/USB Ripper.html"
 ![Challenge Details](/assets/htb/challenge/forensics/usb-ripper/img/challenge_desc.png)
 
 
-```There is a sysadmin, who has been dumping all the USB events on his Linux host all the year...
+```text
+There is a sysadmin, who has been dumping all the USB events on his Linux host all the year...
 Recently, some bad guys managed to steal some data from his machine when they broke into the office.
-Can you help him to put a tail on the intruders? Note: once you find it, "crack" it.```
+Can you help him to put a tail on the intruders? Note: once you find it, "crack" it.
+```
 
 ## SOLUTION
 
-Download the Challenge File. You are provided with a `zip` file names as `USB Ripper.zip`.
-There are 2 files names as `auth.json` and `syslog` in the compressed file.
+Download the Challenge File. You are provided with a `zip` file names as `USB Ripper.zip`.<br>
+There are 2 files names as `auth.json` and `syslog` in the compressed file.<br>
 Decompress those files.
 
-**The Serial numbers of Authorized devices are loged in `auth.json`.
+**The Serial numbers of Authorized devices are loged in `auth.json`.<br>
 In the file `syslog` there are the details of devices that are used in office machine**
 
 Actually I don't have any knowledge about any tools used by **sys admin** to manage the login information.<br>
@@ -32,16 +34,16 @@ I have seen the serial numbers that are listed in `auth.json` file, and found th
 
 ### ASSUMPTION
 
-1. As `syslog` file logs the information about devices that are pluged in the machine
+1. As `syslog` file logs the information about devices that are pluged in the machine<br>
 then it might also log the **serial number** of unauthorized devices.
 
-2. If the authorized serial numbers are listed in `auth.json` file,
-then we can easily compare the **serial numbers**  from `syslog` file
-with `auth.json` file and identify the serial of un-recognized device.
+2. If the authorized serial numbers are listed in `auth.json` file,<br>
+then we can easily compare the **serial numbers**  from `syslog` file<br>
+with `auth.json` file and identify the serial of un-recognized device.<br>
 
 ### SCRIPTING
 
-As I am not aware of any inbuilt scripts or softwares for analyzing about these `log` files,
+As I am not aware of any inbuilt scripts or softwares for analyzing about these `log` files,<br>
 I started to write my own code in python3.
 
 The Code that is used to solve this challenge is:
@@ -99,18 +101,17 @@ Invalid serials are noted in \'invalid_serials.txt\' file""")
 
 ### CODE DESCRIPTION :
 
-This Code first read the `auth.json` file in plain text and store the text in **file_content** variable.
-Then it reads the lines of `syslog` file and store the list of lines in **sys_log** variable.
+This Code first read the `auth.json` file in plain text and store the text in **file_content** variable.<br>
+Then it reads the lines of `syslog` file and store the list of lines in **sys_log** variable.<br>
 Then a loop runs where it checks the `SerialNumber: ` string in each line of `syslog` file.
 
-If it finds the matching string, then it get the serial number from that line and pass it to **serial_checker()**
+If it finds the matching string, then it get the serial number from that line and pass it to **serial_checker()**<br>
 function where it checks if the serial number is listed in **checked_serial** list.
 
-- If the serial number is not checked earlier then it will add the serial number in the **checked_serial** list and
+- If the serial number is not checked earlier then it will add the serial number in the **checked_serial** list and<br>
 check if it is listed in `auth.json` file.
 
-    - If the serial number is not listed in `auth.json` file, then a file named `invalid_serials.txt` will 
-    be created with the un-recognized serial number
+    - If the serial number is not listed in `auth.json` file, then a file named `invalid_serials.txt` will be created with the un-recognized serial number
     
     - If the serial number is listed in `auth.json` file, then it will **pass** the argument.
     
@@ -132,6 +133,8 @@ Then I have used <a href='https://crackstation.net' target='_blank'>crackstation
 ![Cracked_hash](/assets/htb/challenge/forensics/usb-ripper/img/cracked_hash.png)
 
 At last the Flag of this challenge would be `HTB{*****************}`
+
+---
 
 This is how, I solved this challenge.
 

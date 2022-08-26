@@ -19,7 +19,7 @@ permalink: "/HTB/challenge/web/Emdee five for life.html"
 
 Click on the `Start Instance` button to start the challenge.
 
-Then you are provided with an `website's address` copy it and open it in another tab or browser.
+Then you are provided with an `website's address` copy it and open it in another tab or browser.<br>
 In my case it was `http://188.166.168.204:32270`
 
 ### Homepage of the Webapp :
@@ -27,8 +27,8 @@ In my case it was `http://188.166.168.204:32270`
 ![homepage](/assets/htb/challenge/web/emdee-five-for-life/img/homepage.png)
 
 
-The webapp ask us to hash a given string, with MD5 and submit it in the provided textbox.
-If we are going to manually convert the string in `MD5 hash` and submit it, then it will
+The webapp ask us to hash a given string, with MD5 and submit it in the provided textbox.<br>
+If we are going to manually convert the string in `MD5 hash` and submit it, then it will<br>
 give a response string as `Too slow!`.
 
 So, to solve this challenge I thought of making an `automation script` with `python3`.
@@ -45,7 +45,7 @@ After analyzing the source code of the webpage, I thought of using `requests` mo
 
 ![post_request](/assets/htb/challenge/web/emdee-five-for-life/img/burp_data.png)
 
-For analyzing the POST request that the webapp is sending toe the server, I am using `Burpsuite`.
+For analyzing the POST request that the webapp is sending toe the server, I am using `Burpsuite`.<br>
 In my case it is `Burp Suite Community Edition v2021.2.1`<br>
 I have analyzed the post request and found that there is a variable named as `hash=` where the hash is to be mentioned and send to the server.
 
@@ -117,10 +117,10 @@ Here, the exploit code for this challenge will get the source-code of the provid
 
 Change `http://188.166.168.204:32270`, with what the `web_address` you are provided with.
 
-The exploit script will output :
+The exploit script will output :<br>
 `STRING_TO_ENCODE = <String to encode>   |   RESPONSE_STRING = <Response string from server>`
 
-For example, If the webapp provides a string `AORErZSAyqSNn3uNeZyK` to hash with MD5.
+For example, If the webapp provides a string `AORErZSAyqSNn3uNeZyK` to hash with MD5.<br>
 Then, the assumed output will be:
 
 `STRING_TO_ENCODE = AORErZSAyqSNn3uNeZyK   |   RESPONSE_STRING = Too slow!`
@@ -130,6 +130,8 @@ Then, the assumed output will be:
 If the `RESPONSE_STRING` starts with `HTB{` then the script will exit, and we are going to have the `Flag`.
 
 ![exploit](/assets/htb/challenge/web/emdee-five-for-life/img/exploit.png)
+
+---
 
 This is how, I solved this challenge.
 

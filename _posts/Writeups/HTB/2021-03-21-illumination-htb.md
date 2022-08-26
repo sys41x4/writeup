@@ -18,7 +18,7 @@ permalink: "/HTB/challenge/forensics/illumination.html"
 
 ## SOLUTION
 
-Download the zip file provide by the challenge.
+Download the zip file provide by the challenge.<br>
 The Password for the zip file would be `hackthebox`.
 
 First of all unzip the files from zip file using the command `unzip Illumination.zip`
@@ -39,12 +39,14 @@ Using `git show 335d6cfe3cdc25b89cae81c50ffb957b86bf5a4a` we can view the, **log
 
 ![repo_log](/assets/htb/challenge/forensics/illumination/img/commit_details.png)
 
-Here we can see the `token` is shown at the end of the file.
+Here we can see the `token` is shown at the end of the file.<br>
 ![token](/assets/htb/challenge/forensics/illumination/img/token.png)
 
 Let us decode the `base64` encoding of the `token` value.
 
 ![flag](/assets/htb/challenge/forensics/illumination/img/flag.png)
+
+---
 
 This is how, I solved this challenge.
 

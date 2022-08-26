@@ -1,8 +1,8 @@
 ---
-title: Reykjavik [CTFlearn] Writeup
+title: Reykjavik [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2022-08-25 18:32:00 -0500
-categories: ["CTF Platform", "CTFlearn Challenges", "Reverse Engineering"]
+categories: ["CTF Platform", "CTFlearn"]
 tags: [CTFlearn, Easy, Reykjavik, "Reverse Engineering", Challenge, writeup, gdb, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
 ---
@@ -13,7 +13,7 @@ permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
 
 ### Challenge Description
 
-![Challenge Details](/assets/ctflearn/challenge/RE/Reykjavik/img/challenge_desc.png)
+![Challenge Details](/assets/ctflearn/challenge/RE/Reykjavik/img/challenge_desc.jpg)
 
 `Good beginning Reversing challenge - jump into gdb and start looking for the flag!`
 
@@ -151,7 +151,7 @@ Debugging the binary stump us into address `0x555555555168`
 where `R13` is assigned with `CTFlearn{Eye_L0ve_Iceland_}`
 which is the flag for the challenge
 
-``bash
+```bash
 R13  0x7fffffffdd10 ◂— 'CTFlearn{Eye_L0ve_Iceland_}'
 
 ► 0x555555555168 <main+200>    call   strcmp@plt                <strcmp@plt>

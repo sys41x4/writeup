@@ -1,8 +1,8 @@
 ---
-title: Phonebook [HackTheBox] Writeup
+title: Phonebook [WEB][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2021-03-23 18:32:00 -0500
-categories: [HackTheBox, Challenges, Web]
+categories: ["CTF Platform", HackTheBox]
 tags: [HackTheBox, Easy, phonebook, Web, Challenge, writeup, python3, python]
 permalink: "/HTB/challenge/web/Phonebook.html"
 ---

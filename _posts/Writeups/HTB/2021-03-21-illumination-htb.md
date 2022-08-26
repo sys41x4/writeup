@@ -1,8 +1,8 @@
 ---
-title: Illumination [HackTheBox] Writeup
+title: Illumination [FORENSICS][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2021-03-21 18:32:00 -0500
-categories: [HackTheBox, Challenges, Forensics]
+categories: ["CTF Platform", HackTheBox]
 tags: [HackTheBox, Easy, Illumination, Forensics, Challenge, writeup, "git commit"]
 permalink: "/HTB/challenge/forensics/illumination.html"
 ---

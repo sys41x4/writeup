@@ -2,7 +2,7 @@
 title: Hacktivity Con 2021 [CTF] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2021-09-19 18:32:00 -0500
-categories: [CTF Writeup, "Hacktivity Con", "HacktivityCon2021-CTF"]
+categories: [Live CTF, "Hacktivity Con", "HacktivityCon2021-CTF"]
 tags: ["Hacktivity Con", "Hacktivity Con 2021", "Hacktivity Con CTF", "Hacktivity Con 2021 CTF","2021", "September", Hackerone, writeup, CTFtime]
 permalink: "/CTF-Writeup/HacktivityCon-2021-CTF.html"
 ---

@@ -16,7 +16,9 @@ permalink: "/CTFlearn/challenge/RE/Rangoon.html"
 ![Challenge Details](/assets/ctflearn/challenge/RE/Rangoon/img/challenge_desc.jpg)
 
 ```text
-This is the third in a series of introductory Reversing Challenges; Reyjkavik, Riyadh and Rangoon. These are designed for people new to Reversing. A little gdb, C and Assembler knowledge should be enough to solve this challenge. Good Luck!
+This is the third in a series of introductory Reversing Challenges; Reyjkavik, Riyadh and Rangoon.
+These are designed for people new to Reversing. A little gdb, C and Assembler knowledge should be enough to solve this challenge.
+Good Luck!
 
 Note that once you solve the challenge, you can use the flag to decrypt the source file used to create the challenge if you are interested in seeing the original C program.
 

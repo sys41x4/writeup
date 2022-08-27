@@ -158,6 +158,9 @@ R13  0x7fffffffdd10 ◂— 'CTFlearn{Eye_L0ve_Iceland_}'
 
 ► 0x555555555168 <main+200>    call   strcmp@plt                <strcmp@plt>
  ```
+---
+
+`FLAG : CTFlearn{Eye_L0ve_Iceland_}`
 
 ---
 

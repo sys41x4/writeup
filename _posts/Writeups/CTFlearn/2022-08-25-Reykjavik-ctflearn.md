@@ -1,7 +1,7 @@
 ---
 title: Reykjavik [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
-date: 2022-08-25 18:32:00 -0500
+date: 2022-08-25 06:32:00 -0500
 categories: ["CTF Platform", "CTFlearn"]
 tags: [CTFlearn, Easy, Reykjavik, "Reverse Engineering", Challenge, writeup, gdb, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
@@ -16,6 +16,8 @@ permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
 ![Challenge Details](/assets/ctflearn/challenge/RE/Reykjavik/img/challenge_desc.jpg)
 
 `Good beginning Reversing challenge - jump into gdb and start looking for the flag!`
+
+---
 
 ## SOLUTION
 

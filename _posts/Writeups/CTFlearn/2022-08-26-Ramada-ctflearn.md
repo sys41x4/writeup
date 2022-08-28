@@ -21,12 +21,11 @@ If you are new to reversing, please remember that to solve Reversing challenges 
 And maybe Ghidra. So this challenge is a great place to start Reversing, but unfortunately it's only 10 points because it's easier than other reversing challenges.
 It probably requires more skills than solving a 10 point Forensics problem like RubberDuck. If you solve the challenge you can use the flag to decrypt the sources and see how the challenge is created.
 ```
+---
 
 ## SOLUTION
 
 ## Analysed using **GDB + pwngdb**
-
-## Analysed using GDB + pwngdb
 
 1. **Load The Binary in GDB**
 
@@ -178,7 +177,7 @@ Thus the ultimate FLAG Length will be **32**
 => 0x000055555555517d <+125>:   repz cmps BYTE PTR ds:[rsi],BYTE PTR es:[rdi]
 ```
 
-* Character by Character check for `CTFlearn{` and BYTE STRING<br>
+* Character by Character check for `CTFlearn{` and supplied BUFFER STRING<br>
   where `rcx` define the length of the string until which to check<br>
   or we can say is the index of the string compare and `rcx` is<br>
   substracted by 1.

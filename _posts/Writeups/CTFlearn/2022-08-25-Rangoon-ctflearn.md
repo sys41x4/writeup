@@ -1,7 +1,7 @@
 ---
 title: Rangoon [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
-date: 2022-08-25 23:32:00 -0500
+date: 2022-08-25 07:32:00 -0500
 categories: ["CTF Platform", "CTFlearn"]
 tags: [CTFlearn, Easy, Rangoon, "Reverse Engineering", Challenge, writeup, gdb, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Rangoon.html"
@@ -24,6 +24,7 @@ Note that once you solve the challenge, you can use the flag to decrypt the sour
 
 The LiveOverflow channel on YouTube has some great tutorials on reversing, this video has almost everything you need to solve this challenge: https://www.youtube.com/watch?v=VroEiMOJPm8
 ```
+---
 
 ## SOLUTION
 

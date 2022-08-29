@@ -45,10 +45,10 @@ In In Cutter's `main` Decompiled code block
 puVar4 = (uint8_t *)argv[1]; # String Input
 ```
 
-2. Debug the program with Random buffer length<br>
+2 . Debug the program with Random buffer length<br>
    For this case we are using `AAA`
 
-3. Pass the String Length Check and Starting String Identification
+3 . Pass the String Length Check and Starting String Identification
 
 Pass if `len(puVar4) >= len(puVar13)`<br>
 which means that the buffer string should start with `CTFlearn{`<br>
@@ -60,7 +60,7 @@ puVar13 = (uint8_t *)"CTFlearn{";
 bVar14 = *puVar11 < *puVar13;
 ```
 
-4. Pass the Check for endian character
+4 . Pass the Check for endian character
 
 Check if the supplied buffer string has `0x7d` or `}` at the end.
 
@@ -70,7 +70,7 @@ if (puVar4[iVar9 + -1] == 0x7d)
 ```
 
 
-5. Getting character from Particular Index of the suplied Buffer String
+5 . Getting character from Particular Index of the suplied Buffer String
 
 Get the character from mentioned string<br>
 Here character from `Index 17` is stored in `uVar2`<br>
@@ -82,7 +82,7 @@ uVar2 = puVar4[0x11]; # puVar4[17]
 uVar3 = puVar4[0x16]; # puVar4[22]
 ```
 
-6. Pass the Comparison checks for uVar2 and uVar3 with `0x5f` or `_`
+6 . Pass the Comparison checks for uVar2 and uVar3 with `0x5f` or `_`
 
 If `puVar4[17]=puVar4[22]=0x5f` then<br>
 character comparison check will Pass
@@ -100,7 +100,7 @@ Which means that the buffer string can now be structured as<br>
 `CTFlearn{<part1>_<part2>_<part3>}`<br>
 where `<part1>` , `<part2>` and `<part3>` are string to be put to generate the FLAG
 
-7. Pass **BUFFER STRING** Length Check
+7 . Pass **BUFFER STRING** Length Check
 
 BUFFER STRING length check will pass if `len(puVar4) == 28`<br>
 which means the **FLAG** length is `28`
@@ -110,13 +110,13 @@ iVar9 = strlen(puVar4);
 iVar8 = __stpcpy_chk(iVar7 + 1, *(undefined8 *)(iVar5 + ((uint64_t)(iVar8 == 0x1c) * 3 + 9) * 8), 0x557d5494b1df - iVar7);
 ```
 
-8. Suppling structured **BUFFER STRING** to get the FLAG
+8 . Suppling structured **BUFFER STRING** to get the FLAG
 
 From the Above Discussion we can structure a **BUFFER STRING**<br>
 to Pass in debugging process can be<br>
 `CTFlearn{AAAAAAAA_AAAA_AAAA}`
 
-9. Getting the FLAG in the Register
+9 . Getting the FLAG in the Register
 
 Set A Breakpoint at `strcmp`
 

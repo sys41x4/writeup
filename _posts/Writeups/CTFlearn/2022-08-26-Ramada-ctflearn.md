@@ -33,13 +33,13 @@ It probably requires more skills than solving a 10 point Forensics problem like 
 $ gdb ./Ramada
 ```
 
-2. Start the Program with any String with any length
+2 . Start the Program with any String with any length
 
 ```bash
 pwndbg> start AAAAAAAAAA
 ```
 
-3. Disassemble at current position, which in this case will be main
+3 . Disassemble at current position, which in this case will be main
 
 ```bash
 pwndbg> disassemble
@@ -162,7 +162,7 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 
-4. Passing the start BUFFER STRING check
+4 . Passing the start BUFFER STRING check
 
 In `main` function we can see that in address `0x000055555555517d` `CTFlearn{` is stored in `rsi` register<br>
 for comparison with `rdi`<br>
@@ -212,7 +212,7 @@ Start the analysis again with the BUFFER STRING `CTFlearn{AAAAAAAAA`
 pwndbg> start CTFlearn{AAAAAAAAA
 ```
 
-2. Passing End character check for BUFFER Input STRING
+5 . Passing End character check for BUFFER Input STRING
 
 In Address `0x55555555519c` the last Character<br>
 of the supplied BUFFER STRING is compared with `0x7d` or `}`
@@ -229,7 +229,7 @@ Start the debugging again with the BUFFER STRING `CTFlearn{AAAAAAAAA}`
 pwndbg> start CTFlearn{AAAAAAAAA}
 ```
 
-6. Passing the BUFFER STRING Length Check
+6 . Passing the BUFFER STRING Length Check
 
 In address `0x5555555551a3` we can see that<br>
 `0x1f` is compared with `rax` value which in this case is `0x13`<br>
@@ -250,7 +250,7 @@ Start the debugging again with the BUFFER STRING `CTFlearn{AAAAAAAAAAAAAAAAAAAAA
 ```bash
 pwndbg> start CTFlearn{AAAAAAAAAAAAAAAAAAAAA}
 ```
-7. Getting the Hex Values to compare
+7 . Getting the Hex Values to compare
 
 Now it is better to be analysed with Ghidra<br>
 On analyzing with Ghidra we can see that there is a function named as `CheckFlag`<br>

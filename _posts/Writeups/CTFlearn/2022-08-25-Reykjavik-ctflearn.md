@@ -29,13 +29,13 @@ permalink: "/CTFlearn/challenge/RE/Reykjavik.html"
 $ gdb ./Reykjavik
 ```
 
-2. Start the Program with any String with any length
+2 . Start the Program with any String with any length
 
 ```bash
 pwndbg> start AAAA
 ```
 
-3. Disassemble at current position, which in this case will be main
+3 . Disassemble at current position, which in this case will be main
 
 ```bash
 pwndbg> disassemble
@@ -121,7 +121,7 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 
-4. Passing the Length Check
+4 . Passing the Length Check
 
 In `main` function we can see that in address `0x00005555555550a9` `0x20` is subtracted from `rsp`<br>
 so we can assume that the length of the Flag will be **0x20** or **32**<br>
@@ -131,7 +131,7 @@ Thus the ultimate FLAG Length will be **32**
 => 0x00005555555550a9 <+9>:	sub    rsp,0x20
 ```
 
-5. Starting the program again with 32 length buffer again
+5 . Starting the program again with 32 length buffer again
 
 Taking buffer be `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`
 
@@ -139,7 +139,7 @@ Taking buffer be `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`
 pwndbg> start AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
 
-6. False Flag :P
+6 . False Flag :P
 
 Debugging the binary stump us into address `0x5555555550ee`<br>
 where `RDX` and `RDI` is assigned `CTFlearn{Is_This_A_False_Flag?}`<br>
@@ -149,7 +149,7 @@ which is a False Flag or Rabbit Hole :P
 ► 0x5555555550ee <main+78>    repe cmpsb byte ptr [rsi], byte ptr [rdi]
 ```
 
-7. Revealing the FLAG
+7 . Revealing the FLAG
 
 Debugging the binary stump us into address `0x555555555168`<br>
 where `R13` is assigned with `CTFlearn{Eye_L0ve_Iceland_}`<br>

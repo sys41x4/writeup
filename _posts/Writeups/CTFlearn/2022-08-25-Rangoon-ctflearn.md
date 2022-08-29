@@ -3,7 +3,7 @@ title: Rangoon [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
 date: 2022-08-25 07:32:00 -0500
 categories: ["CTF Platform", "CTFlearn"]
-tags: [CTFlearn, Easy, Rangoon, "Reverse Engineering", Challenge, writeup, gdb, pwngdb, python]
+tags: [CTFlearn, Easy, Rangoon, "Reverse Engineering", Challenge, writeup, Cutter, python]
 permalink: "/CTFlearn/challenge/RE/Rangoon.html"
 ---
 

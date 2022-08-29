@@ -1,7 +1,7 @@
 ---
 title: Raspberry [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
-date: 2022-08-25 06:32:00 -0500
+date: 2022-08-27 06:32:00 -0500
 categories: ["CTF Platform", "CTFlearn"]
 tags: [CTFlearn, Easy, Raspberry, "Reverse Engineering", Challenge, writeup, Ghidra, gdb, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Raspberry.html"

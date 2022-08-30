@@ -1,7 +1,7 @@
 ---
 title: Finish The Flag [RE][EASY] Writeup
 author: Arijit Bhowmick [sys41x4]
-date: 2022-08-25 06:32:00 -0500
+date: 2022-08-28 11:40:00 -0500
 categories: ["CTF Platform", "CTFlearn"]
 tags: [CTFlearn, Easy, Finish The Flag, "Reverse Engineering", Challenge, writeup, gdb, unzip, pwngdb, python]
 permalink: "/CTFlearn/challenge/RE/Finish_The_Flag.html"
